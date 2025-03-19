@@ -25,6 +25,11 @@ for (const sound in soundMap) {
     const text = document.createElement('p');
     text.textContent = `${sound}: ${soundMap[sound]}`;
     soundElement.appendChild(text);
+
+    // LISTEN TO CLICKS
+    soundElement.addEventListener('click', () => {
+        playSound(soundMap[sound]);
+    });
 }
 
 // PLAY SOUND
