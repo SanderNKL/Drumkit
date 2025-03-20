@@ -6,23 +6,23 @@ const soundMap = {
 
 const drumContainer = document.querySelector('#drum-container');
 
-for (const sound in soundMap) {
+for (const key in soundMap) {
     const drumElement = document.createElement('div');
     drumElement.classList.add('drum');
     drumContainer.appendChild(drumElement);
 
     const imgElement = document.createElement('img');
-    imgElement.src = `./images/${soundMap[sound]}.jpg`;
+    imgElement.src = `./images/${soundMap[key]}.jpg`;
     imgElement.width = 100;
     imgElement.height = 100;
     drumElement.appendChild(imgElement);
     
     const textElement = document.createElement('p');
-    textElement.textContent = `${sound}: ${soundMap[sound]}`;
+    textElement.textContent = `${key}: ${soundMap[key]}`;
     drumElement.appendChild(textElement);
 
     drumElement.addEventListener('click', () => {
-        playSound(soundMap[sound]);
+        playSound(soundMap[key]);
     });
 }
 
