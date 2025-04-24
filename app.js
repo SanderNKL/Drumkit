@@ -1,3 +1,17 @@
+const inputElement = document.createElement('input');
+document.body.append(inputElement);
+inputElement.addEventListener('input', (e) => {
+    console.log(e.target.value);
+});
+
+const buttonElement = document.createElement('button');
+buttonElement.textContent = 'Click Me';
+buttonElement.addEventListener('click', (e) => {
+    console.log(e);
+})
+document.body.append(buttonElement)
+
+// Drumkit
 const soundMap = {
     b: 'bongo',
     k: 'kick',
@@ -5,7 +19,6 @@ const soundMap = {
 }
 
 const drumContainer = document.querySelector('#drum-container');
-
 for (const key in soundMap) {
     const drumElement = document.createElement('div');
     drumElement.classList.add('drum');
